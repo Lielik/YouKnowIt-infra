@@ -1,3 +1,7 @@
-aws_region   = ""
-project_name = ""
-environment  = ""
+aws_region           = ""
+project_name         = ""
+environment          = ""
+vpc_cidr             = ""
+availability_zones   = []
+public_subnet_cidrs  = []
+private_subnet_cidrs = []
