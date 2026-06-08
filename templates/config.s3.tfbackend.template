@@ -1,3 +1,5 @@
+a template for config.s3.tfbackenf file in the root directory
+
 bucket       = ""
 key          = ""
 region       = ""

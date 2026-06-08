@@ -1,3 +1,5 @@
+A template for .tfvars file in the environments directory
+
 # Global variables for the YouKnowIt infrastructure
 aws_region           = ""
 project_name         = ""

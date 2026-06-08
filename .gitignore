@@ -1,6 +1,6 @@
-terraform.tfvars
 .terraform/
 *.tfstate
 *.tfstate.backup
 *.tflock
 *.tfbackend
+*.tfvars
