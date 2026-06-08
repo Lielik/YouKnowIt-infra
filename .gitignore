@@ -4,3 +4,5 @@
 *.tflock
 *.tfbackend
 *.tfvars
+tfplan
+*.log
