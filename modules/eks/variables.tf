@@ -1,9 +1,3 @@
-# global variables for the YouKnowIt infrastructure
-variable "aws_region" {
-  description = "AWS region to deploy all resources"
-  type        = string
-}
-
 variable "project_name" {
   description = "Name prefix used for all resources"
   type        = string
@@ -14,28 +8,21 @@ variable "environment" {
   type        = string
 }
 
-# VPC and networking
-variable "vpc_cidr" {
-  description = "CIDR block for the VPC"
+variable "vpc_id" {
+  description = "ID of the VPC to deploy EKS into"
   type        = string
 }
 
-variable "availability_zones" {
-  description = "List of availability zones to use"
+variable "private_subnet_ids" {
+  description = "IDs of the private subnets for EKS nodes"
   type        = list(string)
 }
 
-variable "public_subnet_cidrs" {
-  description = "CIDR blocks for public subnets"
+variable "public_subnet_ids" {
+  description = "IDs of the public subnets for the load balancer"
   type        = list(string)
 }
 
-variable "private_subnet_cidrs" {
-  description = "CIDR blocks for private subnets"
-  type        = list(string)
-}
-
-# EKS cluster configuration
 variable "kubernetes_version" {
   description = "Kubernetes version for the EKS cluster"
   type        = string
