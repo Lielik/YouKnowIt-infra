@@ -60,3 +60,31 @@ variable "node_max_size" {
   description = "Maximum number of worker nodes"
   type        = number
 }
+
+# RDS configuration
+variable "db_instance_class" {
+  description = "RDS instance class"
+  type        = string
+}
+
+variable "db_name" {
+  description = "Name of the database"
+  type        = string
+}
+
+variable "db_username" {
+  description = "Master username for the database"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_password" {
+  description = "Master password for the database"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_allocated_storage" {
+  description = "Allocated storage for the database in GB"
+  type        = number
+}

@@ -1,7 +1,21 @@
+# Global variables for the YouKnowIt infrastructure
 aws_region           = ""
 project_name         = ""
 environment          = ""
+# VPC and networking
 vpc_cidr             = ""
 availability_zones   = []
 public_subnet_cidrs  = []
 private_subnet_cidrs = []
+# EKS cluster configuration
+kubernetes_version = ""
+node_instance_type = ""
+node_desired_size  = 
+node_min_size      = 
+node_max_size      = 
+# RDS configuration
+db_instance_class    = ""
+db_name              = ""
+db_username          = ""
+db_password          = ""
+db_allocated_storage = 
