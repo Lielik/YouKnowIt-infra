@@ -53,3 +53,18 @@ output "oidc_provider_url" {
   description = "URL of the EKS OIDC provider, without the https:// prefix"
   value       = module.eks.oidc_provider_url
 }
+
+output "loki_s3_bucket_name" {
+  description = "S3 bucket name for Loki logs"
+  value       = module.loki_storage.bucket_name
+}
+
+output "loki_iam_role_arn" {
+  description = "IAM role ARN for Loki's ServiceAccount (IRSA)"
+  value       = module.loki_storage.role_arn
+}
+
+output "eso_iam_role_arn" {
+  description = "IAM role ARN for ESO's ServiceAccount (IRSA)"
+  value       = module.eso_iam.role_arn
+}

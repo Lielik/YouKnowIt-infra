@@ -38,3 +38,23 @@ module "rds" {
   db_password           = var.db_password
   db_allocated_storage  = var.db_allocated_storage
 }
+
+module "loki_storage" {
+  source = "./modules/loki-storage"
+
+  project_name      = var.project_name
+  environment       = var.environment
+  oidc_provider_arn = module.eks.oidc_provider_arn
+  oidc_provider_url = module.eks.oidc_provider_url
+}
+
+module "eso_iam" {
+  source = "./modules/eso-iam"
+
+  project_name      = var.project_name
+  environment       = var.environment
+  oidc_provider_arn = module.eks.oidc_provider_arn
+  oidc_provider_url = module.eks.oidc_provider_url
+  aws_region        = var.aws_region
+}
+
