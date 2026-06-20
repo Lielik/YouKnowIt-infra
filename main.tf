@@ -61,7 +61,7 @@ module "eso_iam" {
 module "argocd" {
   source = "./modules/argocd"
 
-  argocd_chart_version = "8.5.6"
+  argocd_chart_version = "9.6.0"
   argocd_values_url    = "https://raw.githubusercontent.com/Lielik/YouKnowIt-gitops/main/argocd/bootstrap/argocd-values.yaml"
   app_of_apps_url      = "https://raw.githubusercontent.com/Lielik/YouKnowIt-gitops/main/argocd/apps/app-of-apps.yaml"
   gitops_repo_url      = "https://github.com/Lielik/YouKnowIt-gitops"
