@@ -43,3 +43,13 @@ output "db_port" {
   description = "Port of the database"
   value       = module.rds.db_port
 }
+
+output "oidc_provider_arn" {
+  description = "ARN of the EKS OIDC provider"
+  value       = module.eks.oidc_provider_arn
+}
+
+output "oidc_provider_url" {
+  description = "URL of the EKS OIDC provider, without the https:// prefix"
+  value       = module.eks.oidc_provider_url
+}
