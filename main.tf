@@ -68,3 +68,15 @@ module "argocd" {
 
   depends_on = [module.eks]
 }
+
+module "ebs_csi" {
+  source = "./modules/ebs-csi"
+
+  project_name      = var.project_name
+  environment       = var.environment
+  cluster_name      = module.eks.cluster_name
+  oidc_provider_arn = module.eks.oidc_provider_arn
+  oidc_provider_url = module.eks.oidc_provider_url
+
+  depends_on = [module.eks]
+}
