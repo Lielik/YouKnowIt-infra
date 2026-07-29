@@ -39,6 +39,23 @@ module "rds" {
   db_allocated_storage  = var.db_allocated_storage
 }
 
+module "secrets" {
+  source = "./modules/secrets"
+
+  project_name           = var.project_name
+  environment            = var.environment
+  secret_key             = var.secret_key
+  db_username            = var.db_username
+  db_password            = var.db_password
+  db_endpoint            = module.rds.db_endpoint
+  db_name                = var.db_name
+  grafana_admin_user     = var.grafana_admin_user
+  grafana_admin_password = var.grafana_admin_password
+  slack_webhook_url      = var.slack_webhook_url
+
+  depends_on = [module.rds]
+}
+
 module "loki_storage" {
   source = "./modules/loki-storage"
 

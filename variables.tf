@@ -88,3 +88,28 @@ variable "db_allocated_storage" {
   description = "Allocated storage for the database in GB"
   type        = number
 }
+
+# Secrets configuration
+variable "secret_key" {
+  description = "Secret key used for JWT token signing"
+  type        = string
+  sensitive   = true
+}
+
+variable "grafana_admin_user" {
+  description = "Grafana admin username"
+  type        = string
+  default     = "admin"
+}
+
+variable "grafana_admin_password" {
+  description = "Grafana admin password"
+  type        = string
+  sensitive   = true
+}
+
+variable "slack_webhook_url" {
+  description = "Slack incoming webhook URL for Alertmanager notifications"
+  type        = string
+  sensitive   = true
+}
